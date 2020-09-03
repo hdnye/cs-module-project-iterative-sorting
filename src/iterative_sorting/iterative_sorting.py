@@ -4,6 +4,7 @@ def selection_sort(arr):
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
+
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
@@ -14,11 +15,13 @@ def selection_sort(arr):
             if arr[j] < arr[smallest_index]:
                 # replace smallest w j
                 smallest_index = j
-            # incrememnt outer loop & swap 
-        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
         # TO-DO: swap
         # Your code here
+        # incrememnt outer loop & swap 
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+
+      
 
     return arr
 
@@ -27,10 +30,12 @@ def selection_sort(arr):
 def bubble_sort(arr):
     # Your code here
     n = len(arr)
+
     # compare the first pair of elements
     for i in range(n - 1):
         for j in range(n - i -1):
-    #   if rhs is < lhs, swap
+
+    # if rhs is < lhs, swap
     # iterate through list & compare adj pairs
     # if 1 or more swaps, repeat
             if arr[j] > arr[j + 1]:
@@ -64,28 +69,30 @@ def counting_sort(arr, maximum=None):
 def insertion_sort(arr):
     # if part of the arr is sorted
         # we can have an index to the first element that's unsorted
-        first_unsorted_index = 1
-        while first_unsorted_index < len(arr):
+    first_unsorted_index = 1
+    while first_unsorted_index < len(arr):
         # take the next unsorted element
-            cur_element = arr[first_unsorted_index]
+        cur_element = arr[first_unsorted_index]
         # compare to each of the elements in the sorted arr going from biggest to smallest
-            sorted_index = first_unsorted_index - 1
-            while  sorted_index >= 0:
+        sorted_index = first_unsorted_index - 1
+        while  sorted_index >= 0:
             # if sorted element > cur element, shift it 
-                if arr[sorted_index] > cur_element: 
-                    arr[sorted_index + 1] = arr[sorted_index]
+            if arr[sorted_index] > cur_element: 
+                arr[sorted_index + 1] = arr[sorted_index]
                     # decrement sorted index
-                    sorted_index = sorted_index - 1                   
-                elif arr[sorted_index] < cur_element:
+                sorted_index = sorted_index - 1                   
+            elif arr[sorted_index] <= cur_element:
                     # we found the right place for it
-                    arr[sorted_index + 1] = cur_element
-                    # break
+                arr[sorted_index + 1] = cur_element                    
                 # when we get to the end
-                if sorted_index == 0:
-                    arr[sorted_index] = cur_element
+            if sorted_index == 0:
+                arr[sorted_index] = cur_element
                     # decreement sorted index to keep looping backwards
-                sorted_index = sorted_index - 1
+            sorted_index = sorted_index - 1
                     # insert the current element into the array
-                arr[sorted_index + 1] = cur_element
+            # arr[sorted_index + 1] = cur_element
+        first_unsorted_index += 1
+        print(arr)
+    return arr
 
 

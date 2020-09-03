@@ -25,8 +25,8 @@ def binary_search(arr, target):
 
     # High level algorithm: 
     while  start <= end: 
-    # Start at middle
-    # how do we get the midpoint?
+        
+    # Start at middle:
     #   for the whole arr, it's (len(ar) / 2 - 1
     #   for a subset of the arry: (start + end) // 2    
         mid_index = (start + end) // 2
@@ -45,14 +45,5 @@ def binary_search(arr, target):
         # set start = mid_index +1
             start = mid_index + 1   # elimnate rhs  
 
-    # Repeat. Halving the BST until you either find the target or not
-    # if not found:     
-        # else: 
-        #     return mid_index
-
-    # Check if not found
-    #   if subset has a 0 or - length
-    # how do we represent the subset that we're searching in? 
-    #   store start and end index in variables
     return -1  # not found
 
